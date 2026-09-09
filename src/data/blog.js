@@ -1,0 +1,220 @@
+const topics = [
+  ['Comment héberger un site web au Bénin en 2026 ?', 'Hébergement web', 'héberger un site web, hébergement web Bénin, nom de domaine', 'Choisir un hébergeur fiable, relier un domaine et mettre un site en ligne avec une méthode claire.'],
+  ['Créer un site vitrine performant pour une entreprise béninoise', 'Développement web', 'site vitrine Bénin, création site internet, PME numérique', 'Les étapes pour transformer une présence locale en site rapide, rassurant et visible sur Google.'],
+  ['SEO local à Cotonou : le guide pratique pour être trouvé', 'SEO', 'SEO local Cotonou, Google Business Profile, référencement Bénin', 'Optimiser sa fiche Google, ses pages locales et ses contenus pour capter une audience proche.'],
+  ['Digitaliser une PME au Bénin sans exploser son budget', 'Digitalisation', 'digitalisation PME Bénin, outils numériques, transformation digitale', 'Une feuille de route réaliste pour passer des outils dispersés à un système numérique utile.'],
+  ['WordPress ou React : quelle technologie choisir pour son projet ?', 'Développement web', 'WordPress ou React, technologie web, site professionnel', 'Comparer vitesse de lancement, maintenance, SEO et évolutivité avant de choisir sa stack.'],
+  ['Les fondamentaux du référencement naturel en 2026', 'SEO', 'référencement naturel, SEO 2026, visibilité Google', 'Comprendre les signaux techniques, éditoriaux et d’autorité qui soutiennent une visibilité durable.'],
+  ['Pourquoi la vitesse d’un site web influence vos ventes', 'Performance', 'vitesse site web, Core Web Vitals, conversion', 'Mesurer les performances et corriger les freins qui font partir les visiteurs avant l’action.'],
+  ['Créer une boutique en ligne adaptée aux paiements mobiles', 'E-commerce', 'e-commerce Bénin, paiement mobile, boutique en ligne', 'Structurer un parcours d’achat simple avec des moyens de paiement appréciés en Afrique de l’Ouest.'],
+  ['Guide Google Business Profile pour les entreprises locales', 'SEO local', 'Google Business Profile Bénin, fiche établissement, avis clients', 'Améliorer sa fiche locale, obtenir des avis et convertir les recherches en appels.'],
+  ['Sécuriser un site web : 12 contrôles indispensables', 'Cybersécurité', 'sécurité site web, HTTPS, sauvegarde, cybersécurité Bénin', 'Une checklist accessible pour réduire les risques les plus fréquents sur un site professionnel.'],
+  ['Comprendre les Core Web Vitals sans jargon', 'Performance', 'Core Web Vitals, LCP, INP, CLS, SEO technique', 'Lire les indicateurs de Google et prioriser les optimisations qui améliorent vraiment l’expérience.'],
+  ['HTML sémantique : la base d’un site accessible et SEO', 'Développement web', 'HTML sémantique, accessibilité web, balises SEO', 'Utiliser les bonnes balises pour aider les lecteurs, les moteurs et les technologies d’assistance.'],
+  ['React pour débutants : composants, props et état', 'JavaScript', 'apprendre React, composants React, JavaScript moderne', 'Une introduction progressive aux concepts qui structurent une interface React maintenable.'],
+  ['API REST : connecter un frontend à des données utiles', 'Développement web', 'API REST, frontend backend, développement web', 'Comprendre les requêtes, les statuts HTTP et les bonnes pratiques de consommation d’API.'],
+  ['Choisir un nom de domaine qui inspire confiance', 'Stratégie digitale', 'nom de domaine Bénin, choisir domaine, marque en ligne', 'Les critères de mémorisation, d’extension et de cohérence pour construire une adresse durable.'],
+  ['Créer une identité visuelle cohérente sur le web', 'Design digital', 'identité visuelle, branding digital, design Bénin', 'Décliner couleurs, typographies et composants pour une marque reconnaissable sur tous les écrans.'],
+  ['Figma pour concevoir une interface avant de coder', 'UI/UX', 'Figma, maquette web, UI UX Bénin', 'Gagner du temps grâce à une maquette testable, un design system léger et un prototype clair.'],
+  ['UX mobile : 8 règles pour une interface facile à utiliser', 'UI/UX', 'UX mobile, design responsive, expérience utilisateur', 'Concevoir des écrans qui restent lisibles, rapides et utilisables avec une seule main.'],
+  ['Analyser les données d’un site avec Google Analytics 4', 'Data', 'Google Analytics 4, analyse web, données marketing', 'Installer les bons événements et transformer les chiffres en décisions marketing concrètes.'],
+  ['Tableau de bord commercial : les KPI à suivre', 'Data', 'KPI entreprise, dashboard commercial, data décisionnelle', 'Sélectionner des indicateurs simples pour piloter acquisition, ventes et fidélisation.'],
+  ['Introduction à la data visualisation pour les PME', 'Data', 'data visualisation, graphiques, prise de décision', 'Présenter une donnée de façon honnête, lisible et directement exploitable par une équipe.'],
+  ['Excel, Google Sheets ou outil BI : que choisir ?', 'Data', 'Excel ou Google Sheets, outil BI, gestion données', 'Comparer les outils selon le volume, la collaboration, l’automatisation et le niveau de maturité.'],
+  ['Automatiser les tâches répétitives avec des outils no-code', 'Automatisation', 'no-code Bénin, automatisation entreprise, productivité', 'Identifier les tâches automatisables et relier ses outils sans créer une usine à gaz.'],
+  ['WhatsApp Business : transformer les messages en ventes', 'Marketing digital', 'WhatsApp Business Bénin, vente conversationnelle, marketing', 'Organiser catalogue, réponses rapides et suivi client pour professionnaliser les échanges.'],
+  ['Créer une stratégie de contenu qui attire des clients', 'Marketing digital', 'stratégie de contenu, content marketing, clients Bénin', 'Passer d’une publication occasionnelle à un système éditorial mesurable et durable.'],
+  ['Référencement YouTube : faire découvrir ses vidéos', 'SEO', 'SEO YouTube, vidéo digitale, visibilité en ligne', 'Optimiser titre, miniature, description et rétention pour augmenter la découverte organique.'],
+  ['Les réseaux sociaux suffisent-ils pour une entreprise ?', 'Stratégie digitale', 'réseaux sociaux ou site web, présence digitale, entreprise', 'Pourquoi une stratégie solide combine canaux propriétaires, contenu et relation directe.'],
+  ['Créer une newsletter utile et conforme', 'Marketing digital', 'newsletter Bénin, email marketing, consentement', 'Construire une liste qualifiée, écrire des messages utiles et respecter les bonnes pratiques.'],
+  ['Progressive Web App : une alternative légère à l’application mobile', 'Développement web', 'PWA, application web progressive, mobile Bénin', 'Comprendre le fonctionnement d’une PWA et les projets pour lesquels elle est pertinente.'],
+  ['Hébergement mutualisé, VPS ou cloud : les différences', 'Hébergement web', 'VPS ou mutualisé, cloud, serveur web', 'Choisir une infrastructure adaptée au trafic, au budget et au niveau de contrôle souhaité.'],
+  ['Déployer un site React sur Vercel ou Netlify', 'Déploiement', 'déployer React, Vercel, Netlify, CI/CD', 'Mettre en production un frontend moderne avec un flux de déploiement simple et sécurisé.'],
+  ['Git et GitHub : la méthode de travail des développeurs', 'Développement web', 'Git GitHub débutant, versioning, collaboration code', 'Sauvegarder, documenter et partager un projet sans perdre l’historique des modifications.'],
+  ['Variables d’environnement : protéger les clés de son application', 'Cybersécurité', 'variables environnement, secrets API, sécurité développeur', 'Éviter les fuites de clés et séparer proprement configuration locale et production.'],
+  ['Accessibilité web : rendre son site utilisable par tous', 'Accessibilité', 'accessibilité web, WCAG, site inclusif', 'Les améliorations prioritaires pour le clavier, le contraste, les formulaires et les lecteurs d’écran.'],
+  ['Responsive design : une méthode mobile-first efficace', 'Design digital', 'responsive design, mobile-first, CSS', 'Construire une interface qui s’adapte vraiment aux téléphones, tablettes et ordinateurs.'],
+  ['CSS moderne : Grid, Flexbox et variables utiles', 'Développement web', 'CSS Grid, Flexbox, variables CSS, frontend', 'Les outils CSS qui permettent de créer des mises en page propres avec moins de code.'],
+  ['JavaScript moderne : les notions à maîtriser', 'JavaScript', 'JavaScript ES2026, async await, modules', 'Un parcours de révision des concepts qui rendent le code frontend plus robuste et lisible.'],
+  ['Construire une API avec Node.js : les premières étapes', 'Backend', 'Node.js API, Express, backend Bénin', 'Organiser routes, validation et erreurs pour poser les bases d’un service web fiable.'],
+  ['Base de données : SQL ou NoSQL pour un projet web ?', 'Data', 'SQL ou NoSQL, base de données, architecture web', 'Choisir selon les relations, les requêtes, la croissance et les besoins de l’application.'],
+  ['Sauvegarder et restaurer un site web sans stress', 'Maintenance', 'sauvegarde site web, restauration, maintenance', 'Mettre en place une routine de sauvegarde testée pour éviter une interruption coûteuse.'],
+  ['Audit SEO technique : la checklist d’une page saine', 'SEO technique', 'audit SEO technique, indexation, sitemap, robots.txt', 'Contrôler indexation, balises, liens, données structurées et performances en une passe.'],
+  ['Maillage interne : aider Google et vos lecteurs à naviguer', 'SEO', 'maillage interne, liens SEO, architecture site', 'Relier intelligemment ses contenus pour transmettre contexte, popularité et parcours de lecture.'],
+  ['Écrire une page service qui convertit au Bénin', 'Copywriting', 'page service, rédaction web, conversion Bénin', 'Structurer preuve, bénéfices et appel à l’action pour parler aux besoins réels des clients locaux.'],
+  ['Freelance digital : présenter son portfolio pour convaincre', 'Carrière digitale', 'portfolio freelance, trouver clients Bénin, personal branding', 'Mettre en avant résultats, contexte et méthode plutôt qu’une simple galerie de visuels.'],
+  ['Devis de site web : les postes à ne pas oublier', 'Entrepreneuriat', 'devis site web, prix création site, freelance Bénin', 'Chiffrer conception, contenu, maintenance, hébergement et accompagnement avec transparence.'],
+  ['Former une équipe aux outils numériques', 'Digitalisation', 'formation numérique entreprise, conduite du changement', 'Faire adopter un nouvel outil avec objectifs, accompagnement et mesure des usages.'],
+  ['Intelligence artificielle générative : usages responsables au travail', 'IA', 'IA générative Bénin, productivité, éthique numérique', 'Utiliser l’IA pour accélérer la recherche et la production tout en protégeant données et jugement humain.'],
+  ['Données personnelles : les réflexes à adopter sur un site', 'Cybersécurité', 'données personnelles, confidentialité web, RGPD', 'Limiter la collecte, informer les visiteurs et réduire l’exposition des données sensibles.'],
+  ['Tendances du digital en Afrique de l’Ouest à surveiller', 'Tendances', 'digital Afrique de l’Ouest, tendances numériques, Bénin', 'Les signaux qui transforment commerce, services publics, paiements et métiers numériques.'],
+  ['Créer une présence digitale durable en 90 jours', 'Stratégie digitale', 'présence digitale, plan 90 jours, visibilité entreprise', 'Un plan priorisé pour lancer site, contenus, référencement local et mesure des résultats.'],
+];
+
+const aiTopics = [
+  ['ChatGPT gratuit : que peut-il vraiment faire en 2026 ?', 'IA', 'ChatGPT gratuit, intelligence artificielle, usages IA', 'Un guide clair pour comprendre les fonctions utiles de ChatGPT gratuit, ses limites et les bons réflexes à adopter.'],
+  ['Comment utiliser ChatGPT efficacement quand on débute ?', 'IA pratique', 'utiliser ChatGPT débutant, guide ChatGPT, prompts simples', 'Une méthode progressive pour poser de meilleures questions et obtenir des réponses plus fiables.'],
+  ['ChatGPT peut-il remplacer un développeur web ?', 'IA et métiers', 'ChatGPT développeur, IA programmation, limites intelligence artificielle', 'Ce que l’IA automatise réellement dans le code et ce qui demande encore l’expertise d’un professionnel.'],
+  ['L’intelligence artificielle va-t-elle supprimer des emplois ?', 'IA et société', 'IA emploi, intelligence artificielle travail, métiers menacés', 'Analyser les transformations des métiers sans catastrophisme ni promesse irréaliste.'],
+  ['Les avantages de l’IA pour les petites entreprises au Bénin', 'IA et entreprise', 'IA PME Bénin, productivité entreprise, outils IA', 'Des usages accessibles pour gagner du temps sans investir dans une infrastructure complexe.'],
+  ['Les limites de ChatGPT : erreurs, biais et hallucinations', 'IA responsable', 'limites ChatGPT, hallucination IA, biais algorithmiques', 'Reconnaître les réponses inventées et mettre en place une vérification systématique.'],
+  ['L’IA gratuite est-elle vraiment gratuite ?', 'IA et économie', 'IA gratuite, coût ChatGPT, données personnelles IA', 'Comprendre les modèles gratuits, leurs limites commerciales et la valeur de ses données.'],
+  ['Peut-on faire confiance aux réponses d’une intelligence artificielle ?', 'IA responsable', 'fiabilité IA, vérifier réponse ChatGPT, fact-checking IA', 'Une grille de contrôle simple avant de publier ou d’utiliser une réponse générée.'],
+  ['Comment rédiger un bon prompt pour ChatGPT ?', 'IA pratique', 'rédiger prompt, prompt engineering français, ChatGPT', 'La structure en cinq éléments pour obtenir un résultat plus précis, contextualisé et exploitable.'],
+  ['50 prompts ChatGPT utiles pour une entreprise', 'IA pratique', 'prompts ChatGPT entreprise, productivité, marketing IA', 'Une sélection de formulations pour écrire, planifier, analyser et préparer des décisions.'],
+  ['Utiliser ChatGPT pour améliorer son CV et sa lettre de motivation', 'IA et carrière', 'ChatGPT CV, lettre motivation IA, recherche emploi', 'Préparer une candidature plus claire tout en conservant sa voix et ses expériences réelles.'],
+  ['L’IA peut-elle aider les étudiants à apprendre sans tricher ?', 'IA et éducation', 'IA éducation, ChatGPT étudiant, apprendre avec IA', 'Utiliser l’IA comme tuteur, correcteur et outil de révision sans déléguer son apprentissage.'],
+  ['Comment détecter un texte écrit par une IA ?', 'IA et société', 'détecteur IA, texte généré, détection ChatGPT', 'Pourquoi les détecteurs sont imparfaits et quelles méthodes humaines donnent un meilleur contexte.'],
+  ['Les générateurs d’images IA menacent-ils les créateurs ?', 'IA créative', 'images IA, artistes, droit auteur intelligence artificielle', 'Comprendre les gains créatifs, les risques éthiques et la place du travail humain.'],
+  ['Créer une image avec l’IA : méthode et règles à respecter', 'IA créative', 'créer image IA, prompt image, design génératif', 'Construire une demande visuelle précise et vérifier les droits avant toute utilisation commerciale.'],
+  ['IA et droit d’auteur : qui possède une œuvre générée ?', 'IA et droit', 'droit auteur IA, copyright image IA, œuvre générée', 'Les questions juridiques essentielles à vérifier avant de vendre un texte, une image ou un logo généré.'],
+  ['L’intelligence artificielle dans la santé : progrès et dangers', 'IA et société', 'IA santé, diagnostic IA, risques intelligence artificielle', 'Distinguer l’aide à la décision médicale d’un diagnostic automatique non vérifié.'],
+  ['IA dans l’éducation au Bénin : opportunités et précautions', 'IA et éducation', 'IA éducation Bénin, école numérique, fracture numérique', 'Un regard local sur l’accès aux outils, la formation des enseignants et l’égalité des chances.'],
+  ['Comment l’IA transforme le marketing digital ?', 'IA et marketing', 'IA marketing digital, automatisation contenu, marketing Bénin', 'Ce que l’IA accélère dans la recherche, la rédaction et l’analyse sans remplacer la stratégie.'],
+  ['Faut-il utiliser l’IA pour écrire ses articles de blog ?', 'IA et SEO', 'IA rédaction SEO, contenu généré, Google et IA', 'Produire plus vite sans publier un contenu creux, répétitif ou sans expérience réelle.'],
+  ['Contenu IA et référencement Google : ce qu’il faut savoir', 'IA et SEO', 'contenu IA Google, SEO intelligence artificielle, helpful content', 'Les critères de qualité qui comptent réellement, quelle que soit l’outil utilisé pour rédiger.'],
+  ['Comment humaniser un texte produit par ChatGPT ?', 'IA pratique', 'humaniser texte IA, réécriture ChatGPT, contenu naturel', 'Transformer une première ébauche en texte personnel, précis et utile pour son lecteur.'],
+  ['L’IA peut-elle halluciner des sources et des statistiques ?', 'IA responsable', 'sources inventées IA, statistiques ChatGPT, hallucination', 'Comprendre pourquoi une réponse convaincante peut être fausse et comment remonter à la source.'],
+  ['Données personnelles et ChatGPT : quelles informations éviter ?', 'IA et sécurité', 'données personnelles ChatGPT, confidentialité IA, sécurité', 'Une règle simple pour protéger identités, contrats, mots de passe et informations clients.'],
+  ['Utiliser une IA gratuite en entreprise sans exposer ses secrets', 'IA et sécurité', 'IA entreprise sécurité, données confidentielles, confidentialité', 'Mettre en place une politique d’usage réaliste pour les équipes et les outils gratuits.'],
+  ['ChatGPT ou Gemini : quelle IA choisir pour travailler ?', 'Comparatif IA', 'ChatGPT ou Gemini, comparer IA, meilleur outil IA', 'Comparer leurs usages, leurs sources, leurs intégrations et leurs limites avec des critères concrets.'],
+  ['ChatGPT, Claude ou Copilot : comparaison pour les développeurs', 'Comparatif IA', 'ChatGPT Claude Copilot, IA code, assistant développeur', 'Choisir un assistant selon le langage, la confidentialité, la qualité du contexte et le budget.'],
+  ['Les meilleures alternatives gratuites à ChatGPT', 'Comparatif IA', 'alternative ChatGPT gratuite, outils IA gratuits, chatbot IA', 'Un panorama des solutions accessibles et des critères pour éviter les faux outils et les copies.'],
+  ['Comment vérifier qu’un site d’IA est officiel et sécurisé ?', 'IA et sécurité', 'site IA officiel, arnaque ChatGPT, sécurité outil IA', 'Les signes à vérifier avant de créer un compte ou de transmettre des informations.'],
+  ['L’accès gratuit à l’IA réduit-il la fracture numérique ?', 'IA et société', 'fracture numérique IA, accès ChatGPT, inclusion numérique', 'Les bénéfices de l’accès libre mais aussi les écarts persistants entre connexion, compétences et usages.'],
+  ['L’IA gratuite peut-elle devenir un outil d’émancipation au Bénin ?', 'IA et société', 'IA gratuite Bénin, inclusion numérique, autonomisation', 'Des usages concrets pour apprendre, entreprendre et accéder à l’information avec esprit critique.'],
+  ['Pourquoi l’IA ne donne pas la même réponse à tout le monde ?', 'IA pratique', 'réponse ChatGPT différente, modèle IA, contexte prompt', 'Le rôle du contexte, de la formulation, du modèle et de l’historique dans une réponse générée.'],
+  ['Comment apprendre un métier avec l’aide de ChatGPT ?', 'IA et formation', 'apprendre avec ChatGPT, formation IA, reconversion', 'Construire un parcours guidé avec exercices, corrections et vérifications plutôt qu’une simple consommation de réponses.'],
+  ['L’IA peut-elle aider à apprendre le français ou l’anglais ?', 'IA et éducation', 'apprendre anglais avec IA, ChatGPT français, tuteur IA', 'Créer des dialogues, corriger ses erreurs et progresser sans perdre le contact avec des locuteurs réels.'],
+  ['Utiliser l’IA pour gérer ses finances : bonne ou mauvaise idée ?', 'IA et sécurité', 'IA finances personnelles, conseil ChatGPT, risques financiers', 'Les tâches d’organisation possibles et les décisions qui doivent rester vérifiées par un professionnel.'],
+  ['Les deepfakes : comment reconnaître une fausse vidéo ?', 'IA et sécurité', 'deepfake, fausse vidéo IA, vérifier image vidéo', 'Des indices pratiques et des sources de vérification pour limiter la manipulation de l’information.'],
+  ['L’IA favorise-t-elle la désinformation sur les réseaux sociaux ?', 'IA et société', 'IA désinformation, fake news, réseaux sociaux', 'Pourquoi la génération rapide amplifie certains récits et comment retrouver un réflexe de preuve.'],
+  ['IA et démocratie : quel impact sur l’opinion publique ?', 'IA et société', 'IA démocratie, opinion publique, influence algorithmique', 'Les risques de ciblage, d’automatisation et de manipulation dans le débat public.'],
+  ['L’impact écologique de l’intelligence artificielle expliqué simplement', 'IA et environnement', 'impact écologique IA, énergie data centers, numérique responsable', 'Comprendre les coûts énergétiques et les gestes qui réduisent les usages inutiles.'],
+  ['Peut-on utiliser l’IA avec une connexion internet limitée ?', 'IA accessible', 'IA connexion faible, outils IA mobile, accès numérique Bénin', 'Des stratégies sobres pour préparer ses demandes, limiter les échanges et travailler avec un réseau instable.'],
+  ['Comment une PME peut lancer un projet IA sans gros budget ?', 'IA et entreprise', 'projet IA PME, budget intelligence artificielle, IA Bénin', 'Une méthode en quatre étapes pour tester un besoin avant d’acheter une solution coûteuse.'],
+  ['Les métiers créatifs vont-ils disparaître avec l’IA ?', 'IA créative', 'IA métiers créatifs, design et IA, avenir créatif', 'Pourquoi la valeur se déplace vers la direction, le goût, le contexte et la relation avec le client.'],
+  ['IA et service client : chatbot ou conseiller humain ?', 'IA et entreprise', 'chatbot service client, IA relation client, automatisation', 'Savoir quelles demandes automatiser et quand transmettre la conversation à une personne.'],
+  ['Comment créer une charte d’utilisation de l’IA au travail ?', 'IA responsable', 'charte IA entreprise, politique usage IA, gouvernance', 'Un cadre simple sur les données, la vérification, la transparence et la responsabilité.'],
+  ['L’IA peut-elle prendre de bonnes décisions à la place d’un humain ?', 'IA et société', 'décision IA, responsabilité humaine, limites algorithmes', 'Pourquoi une prédiction utile ne signifie pas qu’un système doit décider seul.'],
+  ['Quel avenir pour l’intelligence artificielle en Afrique de l’Ouest ?', 'IA et société', 'avenir IA Afrique de l’Ouest, innovation Bénin, IA locale', 'Les opportunités liées aux langues, aux besoins locaux, aux données et aux compétences régionales.'],
+  ['10 erreurs à éviter quand on commence avec l’intelligence artificielle', 'IA pratique', 'erreurs débutant IA, utiliser ChatGPT, conseils IA', 'Les mauvaises habitudes qui produisent des réponses vagues, risquées ou inutilisables.'],
+  ['Guide de bonnes pratiques pour une IA plus responsable', 'IA responsable', 'IA responsable, éthique intelligence artificielle, bonnes pratiques', 'Une checklist pour combiner efficacité, transparence, sécurité, inclusion et contrôle humain.'],
+  ['Comment parler de l’IA aux enfants et aux adolescents ?', 'IA et éducation', 'IA enfants, éducation numérique, esprit critique', 'Accompagner la curiosité sans banaliser les risques liés aux données, aux images et aux fausses informations.'],
+  ['L’intelligence artificielle est-elle une révolution ou une évolution ?', 'IA et société', 'révolution IA, histoire intelligence artificielle, transformation société', 'Mettre en perspective les ruptures actuelles avec les précédentes transformations technologiques.'],
+];
+
+const slugify = (value) => value
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, '-')
+  .replace(/(^-|-$)/g, '');
+
+const sourceLinks = {
+  'Hébergement web': [
+    { label: 'ICANN — Domaines', url: 'https://www.icann.org/resources/pages/tlds-2012-02-25-en' },
+    { label: 'MDN — Déploiement', url: 'https://developer.mozilla.org/fr/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server' },
+  ],
+  Digitalisation: [
+    { label: 'GSMA Mobile Economy', url: 'https://www.gsma.com/mobileeconomy/' },
+    { label: 'Banque mondiale — Numérique', url: 'https://www.banquemondiale.org/fr/topic/digitaldevelopment' },
+  ],
+  'E-commerce': [
+    { label: 'Stripe — Paiements en ligne', url: 'https://stripe.com/docs' },
+    { label: 'WooCommerce Documentation', url: 'https://woocommerce.com/documentation/' },
+  ],
+  'UI/UX': [
+    { label: 'W3C — Accessibilité', url: 'https://www.w3.org/WAI/standards-guidelines/wcag/fr' },
+    { label: 'Material Design', url: 'https://m3.material.io/' },
+  ],
+  JavaScript: [
+    { label: 'React Documentation', url: 'https://react.dev/' },
+    { label: 'JavaScript MDN', url: 'https://developer.mozilla.org/fr/docs/Web/JavaScript' },
+  ],
+  Déploiement: [
+    { label: 'Vercel Documentation', url: 'https://vercel.com/docs' },
+    { label: 'Netlify Documentation', url: 'https://docs.netlify.com/' },
+  ],
+  Accessibilité: [
+    { label: 'W3C WCAG', url: 'https://www.w3.org/WAI/standards-guidelines/wcag/fr' },
+    { label: 'MDN — Accessibilité', url: 'https://developer.mozilla.org/fr/docs/Web/Accessibility' },
+  ],
+  Backend: [
+    { label: 'Node.js Documentation', url: 'https://nodejs.org/docs/latest/api/' },
+    { label: 'OWASP API Security', url: 'https://owasp.org/www-project-api-security/' },
+  ],
+  Maintenance: [
+    { label: 'Google Search Central', url: 'https://developers.google.com/search/docs' },
+    { label: 'OWASP Cheat Sheets', url: 'https://cheatsheetseries.owasp.org/' },
+  ],
+  'SEO technique': [
+    { label: 'Google — Données structurées', url: 'https://developers.google.com/search/docs/appearance/structured-data/intro' },
+    { label: 'Google — Sitemaps', url: 'https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview' },
+  ],
+  Copywriting: [
+    { label: 'Google — Helpful Content', url: 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content' },
+    { label: 'Nielsen Norman Group', url: 'https://www.nngroup.com/articles/ten-usability-heuristics/' },
+  ],
+  IA: [
+    { label: 'CNIL — IA et données', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+    { label: 'NIST AI Risk Management', url: 'https://www.nist.gov/itl/ai-risk-management-framework' },
+  ],
+  SEO: [
+    { label: 'Google Search Central — SEO', url: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide' },
+    { label: 'Google Search Console', url: 'https://search.google.com/search-console/about' },
+  ],
+  'SEO local': [
+    { label: 'Google Business Profile', url: 'https://www.google.com/business/' },
+    { label: 'Google Search Central', url: 'https://developers.google.com/search/docs' },
+  ],
+  Performance: [
+    { label: 'PageSpeed Insights', url: 'https://pagespeed.web.dev/' },
+    { label: 'Web.dev — Performance', url: 'https://web.dev/learn/performance' },
+  ],
+  'Développement web': [
+    { label: 'MDN Web Docs', url: 'https://developer.mozilla.org/fr/' },
+    { label: 'web.dev', url: 'https://web.dev/' },
+  ],
+  Data: [
+    { label: 'Google Analytics', url: 'https://support.google.com/analytics/' },
+    { label: 'Google Looker Studio', url: 'https://lookerstudio.google.com/' },
+  ],
+  Cybersécurité: [
+    { label: 'OWASP Top 10', url: 'https://owasp.org/www-project-top-ten/' },
+    { label: 'CNIL — Sécurité', url: 'https://www.cnil.fr/fr/securite-des-donnees' },
+  ],
+};
+
+export const blogArticles = [...topics, ...aiTopics].map(([title, category, keywords, excerpt], index) => ({
+  id: index + 1,
+  slug: slugify(title),
+  title,
+  category,
+  keywords,
+  excerpt,
+  date: `2026-${String(Math.max(1, 9 - Math.floor(index / 8))).padStart(2, '0')}-${String((index % 26) + 1).padStart(2, '0')}`,
+  readTime: `${4 + (index % 5)} min`,
+  paragraphs: category.startsWith('IA') || category === 'Comparatif IA' || category === 'IA pratique' || category === 'IA accessible'
+    ? [
+    `${title} mérite une réponse nuancée, surtout au moment où les outils d’intelligence artificielle deviennent accessibles gratuitement au grand public. Leur intérêt est réel : ils peuvent aider à apprendre, produire une première version, comparer des idées ou franchir une difficulté technique. Mais une réponse générée n’est ni une preuve ni un remplacement automatique de l’expérience humaine.`,
+    `Pour un usage utile, donnez à l’outil un contexte précis, demandez un format vérifiable et contrôlez les informations importantes dans une source indépendante. Ne transmettez jamais de mots de passe, de données médicales, de contrats confidentiels ou d’informations permettant d’identifier un client. Cette discipline protège à la fois l’utilisateur et l’organisation.`,
+    `Au Bénin comme ailleurs, la question centrale n’est pas seulement de savoir si l’IA est gratuite. Il faut aussi regarder la qualité de la connexion, la maîtrise du numérique, la langue, la confidentialité et la capacité à juger le résultat. L’IA devient un levier quand elle augmente l’autonomie, pas quand elle remplace le discernement.`,
+  ] : [
+    `${title} est une question concrète pour les entreprises, créateurs et professionnels qui développent leur activité au Bénin. Une bonne décision numérique commence par un objectif mesurable, un public clairement défini et une solution proportionnée.`,
+    `Commencez par l’essentiel : clarifiez le besoin, vérifiez les contraintes de budget et de maintenance, puis choisissez des outils documentés. Une expérience rapide sur mobile, une navigation compréhensible et un contenu précis donnent de meilleurs résultats qu’une accumulation de fonctionnalités.`,
+    `Pour passer à l’action, faites un premier état des lieux, corrigez les points bloquants et mesurez l’évolution avec des indicateurs simples. Réévaluez ensuite votre dispositif chaque mois afin de conserver une présence numérique fiable et utile.`,
+  ],
+  checklist: [
+    'Définir l’objectif et la cible avant de choisir un outil.',
+    'Privilégier une expérience mobile rapide et accessible.',
+    'Mesurer les résultats avec des données compréhensibles.',
+  ],
+  sources: [
+    ...(sourceLinks[category] || []),
+    { label: 'Google Search Central', url: 'https://developers.google.com/search/docs' },
+    { label: 'MDN Web Docs', url: 'https://developer.mozilla.org/fr/' },
+  ].filter((source, sourceIndex, sources) => sources.findIndex((item) => item.url === source.url) === sourceIndex),
+}));
+
+export const getArticle = (slug) => blogArticles.find((article) => article.slug === slug);
