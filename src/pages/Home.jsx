@@ -10,8 +10,8 @@ export default function Home() {
       <section className="hero-new">
         <div className="hero-copy">
           <p className="eyebrow"><span /> Disponible pour de nouveaux projets</p>
-          <h1>Un site qui<br /><em>fait avancer.</em></h1>
-          <p className="hero-intro">J’aide les entrepreneurs et les PME à transformer leur présence digitale en une vraie source de crédibilité, de contacts et de croissance.</p>
+          <h1>Je suis graphiste designer<br /><em>et développeur frontend.</em></h1>
+          <p className="hero-intro">J’aide les entrepreneurs et les PME à transformer leur présence digitale en une vraie source de crédibilité, de contacts et de croissance grâce au design et au développement web.</p>
           <div className="hero-actions">
             <Link className="button button-primary" to="/contact">Démarrer mon projet <ArrowRight size={17} /></Link>
             <Link className="text-link" to="/portfolio">Voir les réalisations <ArrowDownRight size={17} /></Link>
