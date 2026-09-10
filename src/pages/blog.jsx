@@ -1,44 +1,13 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Search, Tag } from 'lucide-react';
 import { blogArticles } from '../data/blog';
-import { addStructuredData, updateMeta, SITE_URL } from '../utils/seo';
 
 const categories = ['Tous', ...new Set(blogArticles.map((article) => article.category))];
 
 export default function Blog() {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('Tous');
-
-  useEffect(() => {
-    const description = 'Guides pratiques au Bénin sur le développement web, le SEO local, la data, la cybersécurité et la digitalisation des entreprises.';
-    updateMeta({
-      title: 'Blog digital au Bénin : SEO, web, data et digitalisation | José Nahounmè',
-      description,
-      keywords: 'blog digital Bénin, SEO local Cotonou, développement web Bénin, data, cybersécurité, digitalisation PME',
-      path: '/blog',
-    });
-    const removeStructuredData = addStructuredData({
-      '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      name: 'Blog digital au Bénin : SEO, web, data et digitalisation',
-      description,
-      url: `${SITE_URL}/blog`,
-      inLanguage: 'fr-BJ',
-      about: ['développement web', 'SEO local', 'data', 'digitalisation au Bénin'],
-      mainEntity: {
-        '@type': 'ItemList',
-        numberOfItems: blogArticles.length,
-        itemListElement: blogArticles.map((article, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
-          url: `${SITE_URL}/blog/${article.slug}`,
-          name: article.title,
-        })),
-      },
-    });
-    return removeStructuredData;
-  }, []);
 
   const filteredArticles = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();

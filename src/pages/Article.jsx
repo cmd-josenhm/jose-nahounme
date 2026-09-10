@@ -1,51 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowUpRight, Clock, Mail, Share2 } from 'lucide-react';
 import { getArticle } from '../data/blog';
-import { addStructuredData, updateMeta, SITE_URL } from '../utils/seo';
 
 export default function Article() {
   const { slug } = useParams();
   const article = getArticle(slug);
-
-  useEffect(() => {
-    if (!article) {
-      document.title = 'Article introuvable | José Nahounmè';
-      return;
-    }
-    updateMeta({
-      title: `${article.title} | Blog José Nahounmè`,
-      description: article.excerpt,
-      keywords: article.keywords,
-      path: `/blog/${article.slug}`,
-      type: 'article',
-    });
-    const removeStructuredData = addStructuredData({
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: article.title,
-      description: article.excerpt,
-      datePublished: article.date,
-      dateModified: article.date,
-      inLanguage: 'fr-BJ',
-      author: { '@type': 'Person', name: 'José Nahounmè' },
-      publisher: { '@type': 'Person', name: 'José Nahounmè', url: SITE_URL },
-      keywords: article.keywords,
-      articleSection: article.category,
-      wordCount: article.paragraphs.join(' ').split(/\s+/).length,
-      mainEntityOfPage: `${SITE_URL}/blog/${article.slug}`,
-      image: `${SITE_URL}/profil.png`,
-      breadcrumb: {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE_URL },
-          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
-          { '@type': 'ListItem', position: 3, name: article.title, item: `${SITE_URL}/blog/${article.slug}` },
-        ],
-      },
-    });
-    return removeStructuredData;
-  }, [article]);
 
   if (!article) {
     return <div className="blog-page blog-empty-page"><h1>Article introuvable</h1><Link to="/blog">Retour au blog</Link></div>;

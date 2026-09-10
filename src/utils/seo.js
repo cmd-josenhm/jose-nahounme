@@ -14,6 +14,8 @@ export const updateMeta = ({ title, description, keywords, path, type = 'website
     'twitter:title': title,
     'twitter:description': description,
     'twitter:image': `${SITE_URL}${image}`,
+    'og:image:alt': `${title} — José Nahounmè`,
+    'twitter:image:alt': `${title} — José Nahounmè`,
   };
   Object.entries(values).forEach(([name, content]) => {
     const selector = name.startsWith('og:') || name.startsWith('twitter:') ? `meta[property="${name}"]` : `meta[name="${name}"]`;
