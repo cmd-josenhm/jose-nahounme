@@ -10,13 +10,13 @@ export default function Home() {
       <section className="hero-new">
         <div className="hero-copy">
           <p className="eyebrow"><span /> Disponible pour de nouveaux projets</p>
-          <h1>Le digital,<br /><em>plus humain.</em></h1>
-          <p className="hero-intro">Je conçois des identités visuelles et des expériences web rapides, utiles et mémorables pour les marques qui veulent avancer.</p>
+          <h1>Un site qui<br /><em>fait avancer.</em></h1>
+          <p className="hero-intro">J’aide les entrepreneurs et les PME à transformer leur présence digitale en une vraie source de crédibilité, de contacts et de croissance.</p>
           <div className="hero-actions">
-            <Link className="button button-primary" to="/contact">Parlons de votre projet <ArrowRight size={17} /></Link>
-            <Link className="text-link" to="/portfolio">Voir mes réalisations <ArrowDownRight size={17} /></Link>
+            <Link className="button button-primary" to="/contact">Démarrer mon projet <ArrowRight size={17} /></Link>
+            <Link className="text-link" to="/portfolio">Voir les réalisations <ArrowDownRight size={17} /></Link>
           </div>
-          <div className="hero-proof"><strong>01</strong><span>Design & développement<br />depuis Cotonou, Bénin</span></div>
+          <div className="hero-proof"><strong>01</strong><span>Brief initial offert<br />Réponse claire sous 24 h</span></div>
         </div>
         <div className="hero-visual">
           <div className="hero-orbit orbit-one" /><div className="hero-orbit orbit-two" />

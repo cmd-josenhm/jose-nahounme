@@ -12,7 +12,7 @@ const links = [
 
 export default function Navbar() {
   const location = useLocation();
-  const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') === 'dark');
+  const [darkMode, setDarkMode] = useState(() => typeof window !== 'undefined' && window.localStorage.getItem('theme') === 'dark');
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
